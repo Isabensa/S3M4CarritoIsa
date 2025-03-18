@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="p-5 shadow-md bg-[#556B2F] text-white flex justify-between items-center"> 
       <div className="flex items-center gap-3">
-        <img src="/images/iconocarrito.png" alt="Carrito" className="w-12 h-12" /> 
+        <img src="/images/iconocarrito.jpg" alt="Carrito" className="w-12 h-12" /> 
         <h1 className="text-2xl font-bold">Carrito de Compras</h1>
       </div>
       <div className="flex-1 flex justify-center">
