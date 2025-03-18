@@ -6,16 +6,20 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="bg-gray-900 text-white rounded-xl p-4 shadow-md">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-40 object-cover rounded-lg mb-4"
-      />
-      <h2 className="text-lg font-bold">{product.name}</h2>
-      <p className="text-gray-400">${product.price}</p>
+    <div className="bg-gray-800 text-white rounded-2xl p-5 shadow-lg transition-transform transform hover:scale-105"> 
+      <div className="w-full h-60 overflow-hidden rounded-xl"> 
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover rounded-xl"
+        />
+      </div>
+      <div className="text-center mt-4">
+        <h2 className="text-xl font-bold">{product.name}</h2>
+        <p className="text-gray-300 text-lg">${product.price.toLocaleString()}</p> 
+      </div>
       <button
-        className="mt-3 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700"
+        className="mt-4 bg-[#556B2F] text-white px-6 py-3 rounded-lg w-full hover:bg-[#6B8E23] transition-all border border-black shadow-md transform hover:scale-105"
         onClick={() => addToCart(product)}
       >
         + Agregar al Carrito

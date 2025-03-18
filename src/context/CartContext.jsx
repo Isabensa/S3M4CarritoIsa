@@ -6,7 +6,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     return JSON.parse(localStorage.getItem("cart")) || [];
   });
-  const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar el modal
+  const [isCartOpen, setIsCartOpen] = useState(false); 
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -38,13 +38,16 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+  
+  
+  const totalItems = cart.reduce((total, product) => total + (product.quantity || 0), 0);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, totalPrice, isCartOpen, toggleCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, totalPrice, totalItems, isCartOpen, toggleCart }}>
       {children}
     </CartContext.Provider>
   );

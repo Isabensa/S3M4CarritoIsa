@@ -12,10 +12,10 @@ const products = [
 const ProductList = () => {
   return (
     <div className="max-w-6xl mx-auto mt-8">
-      <h2 className="text-2xl font-bold text-white mb-5 flex items-center">
+      <h2 className="text-2xl font-bold text-black dark:text-gray-300 mb-5 flex items-center !text-black"> 
         🛍️ Lista de Productos
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md-grid-cols-3 gap-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
