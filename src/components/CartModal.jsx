@@ -10,9 +10,9 @@ const CartModal = () => {
   const handlePayment = () => {
     setIsProcessing(true);
     setTimeout(() => {
-      localStorage.removeItem("cart"); // Limpiar el carrito en localStorage
-      window.open("https://www.mercadopago.com.ar", "_blank"); // Abrir Mercado Pago en nueva pestaña
-      window.location.reload(); // Recargar la página para vaciar el carrito
+      localStorage.removeItem("cart"); 
+      window.open("https://www.mercadopago.com.ar", "_blank"); 
+      window.location.reload(); 
     }, 500);
   };
 
@@ -26,8 +26,12 @@ const CartModal = () => {
         <ul className="space-y-3">
           {cart.length > 0 ? (
             cart.map((item) => (
-              <li key={item.id} className="flex justify-between items-center mb-3 border-b pb-3">
-                <span className="text-lg">{item.name} ({item.quantity})</span>
+              <li key={item.id} className="flex items-center mb-3 border-b pb-3 gap-4">
+                <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-lg" /> 
+                <div className="flex-1">
+                  <span className="text-lg font-bold">{item.name}</span>
+                  <p className="text-gray-300">Cantidad: {item.quantity}</p>
+                </div>
                 <button className="bg-red-500 px-5 py-2 text-white rounded-md hover:bg-red-600" onClick={() => removeFromCart(item.id)}>Quitar</button>
               </li>
             ))

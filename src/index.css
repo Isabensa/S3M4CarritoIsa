@@ -4,12 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos globales */
 body {
   @apply bg-background text-text font-sans;
 }
 
-/* Tarjetas de productos */
 .card {
   @apply bg-cardBg p-5 rounded-lg shadow-lg;
 }
